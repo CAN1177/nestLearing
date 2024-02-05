@@ -3,7 +3,7 @@ import axios from "axios";
 const Get = (url: string) => {
   return (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
     const method = descriptor.value;
-    axios.get(url).then((res) => {
+    axios.get(url).then((res: any) => {
       method(res, {
         status: 200,
         success: true,
